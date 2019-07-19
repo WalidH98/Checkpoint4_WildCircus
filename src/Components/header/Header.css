@@ -1,0 +1,10 @@
+
+#navbar-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(65, 66, 66);
+    flex-direction: row;
+  }
+  
+
+ 

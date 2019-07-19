@@ -4,8 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     statue: DataTypes.STRING
   }, {});
   Cart.associate = function(models) {
-    Cart.belongsToMany(models.Product,{  through:'CarthasProducts', foreignKey:'product_id', as: 'product' });
-    // associations can be defined here
+    Cart.belongsToMany(models.Product,{  through:'CartHasProduct', foreignKey:'cartId', as: 'products' });
   };
   return Cart;
 };

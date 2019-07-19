@@ -5,12 +5,12 @@ const Cart = models.Cart;
 
 module.exports = {
     index: function (req, res, next) {
-        Cart.findAll(req.params.id)
+        Cart.findAll({include: ['products']})
             .then((cart) => { res.json({ cart }) })
             .catch((error) => { console.log(error); });
     },
     show: function (req, res, next ,) {
-        Cart.findByPk(req.params.id , { include: ['product'] })
+        Cart.findByPk(req.params.id , { include: ['products'] })
             .then((cart) => { res.json({ cart }) })
             .catch((error) => { console.log(error); });
     },
@@ -18,17 +18,37 @@ module.exports = {
         Cart.create({
             
             statue: req.body.statue
-        })
-            .then((cart) => { res.json({ message: 'vote panier a bien été Create' }) })
+        }, { include: ['products'] })
+            .then((cart) => {
+                if(req.body.productIds){
+                    cart.setProducts(req.body.productIds.split(','))
+                    .then((associated) => {
+                        res.json({cart, message: 'vote panier a bien été Create' })
+                    })
+                }
+                else {
+                    res.json({ cart, message: 'vote panier a bien été Create' })
+                }
+            })
             .catch((error) => { console.log(error); })
     },
     update: function (req, res, next) {
-        Cart.findByPk(req.params.id)
+        Cart.findByPk(req.params.id, { include: ['products'] })
             .then((cart) => {
                 cart.update({
                     statue: req.body.statue
                 })
-                    .then((updatedcart) => { res.json({ message: 'vote panier est bien Update' }); })
+                    .then((updatedcart) => {
+                        if(req.body.productIds){
+                            cart.setProducts(req.body.productIds.split(','))
+                            .then((associated) => {
+                                res.json({cart, message: 'vote panier a bien été Create' })
+                            })
+                        }
+                        else {
+                            res.json({ cart, message: 'vote panier a bien été Create' })
+                        }
+                    })
                     .catch((error) => { console.log(error); })
             })
             .catch((error) => { console.log(error); });
