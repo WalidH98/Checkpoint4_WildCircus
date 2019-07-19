@@ -10,7 +10,7 @@ module.exports = {
             .catch((error) => { console.log(error); });
     },
     show: function (req, res, next ,) {
-        Cart.findByPk(req.params.id , { include: ['products'] })
+        Cart.findByPk(req.params.id , { include: ['product'] })
             .then((cart) => { res.json({ cart }) })
             .catch((error) => { console.log(error); });
     },
