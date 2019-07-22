@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Header from '../header/Header';
-import Product from './Product';
+import ProductList from './ProductList';
+import { Provider } from 'react-redux'
+import store from '../../store'
 
 export default class Panier extends Component {
     render() {
@@ -11,8 +13,12 @@ export default class Panier extends Component {
                     <h1>Shop</h1>
                 </div>
                 <div>
-                <Product/>
+
+                    <Provider store={store}>
+                        <ProductList />
+                    </Provider>
                 </div>
+
             </div>
 
         )
