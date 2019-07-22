@@ -1,0 +1,9 @@
+#button{
+    z-index: 1;
+    position: absolute;
+    left: 38%;
+    top:20%;
+    font-size: 100px !important;
+    cursor: pointer;
+
+}

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Butcherman&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li{
+
+    color: rgb(149, 26, 26);
+    font-family: 'Butcherman', cursive;
+    line-height: 2.2 !important;
+    -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: rgb(149, 26, 26);
+  list-style: none;
+  font-size: 20px;
+}
+
+li:hover{
+    color: white;
+}
+
+p{
+    text-align: justify;
+ color: white;
+
+    font-family: 'Lora', serif;
+
+
+    padding-left: auto;
+    padding-right: auto;
+    
+}
+
+ h2{
+
+color:rgb(149, 26, 26);
+font-family: 'Butcherman', cursive;
+line-height: 2.2 !important;
+-webkit-text-stroke-width: 0.5px;
+-webkit-text-stroke-color: #fff;
+font-size: 50px !important;
+    text-decoration: blink;
+ }
+
+.blink{
+    color:red; 
+  animation: colorblink 2s infinite;
+}
+@keyframes colorblink { 
+0% { }
+50% { color:green; } 
+}
+
