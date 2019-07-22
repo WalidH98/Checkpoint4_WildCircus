@@ -1,14 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './Components/header/Header';
+import Acceuil from './Components/Acceuil/Acceuil';
+import WildPage from './Components/WildPage/WildPage';
+import Router from './Components/Router/Router';
 
 function App() {
   return (
+    
     <div className="App">
 
     <div>
-      <Header/>
+      <Router/>
     </div>
     </div>
   );

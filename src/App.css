@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+   
+    background-color: rgb(26, 26, 26);
+   
 }
 
 .App-logo {
@@ -31,3 +34,16 @@
     transform: rotate(360deg);
   }
 }
+
+a {
+  text-decoration: none !important;
+  color:rgb(149, 26, 26) !important;
+  
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: white !important;
+  
+}
+
